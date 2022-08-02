@@ -1,0 +1,23 @@
+function lcm_more_than_two_numbers(input_array) {
+    let reminder1 = 0, reminder2 = 0;
+    let size = input_array.length;
+    for(let i=0;i<size;i++) {
+        reminder1 = input_array[i] % input_array[i + 1];
+        if(reminder1 === 0) {
+            input_array[i + 1] = (input_array[i] * input_array[i+1]) / input_array[i + 1];
+        }
+        else {
+            reminder2 = input_array[i + 1] % reminder1;
+            if(reminder2 === 0) {
+                input_array[i + 1] = (input_array[i] * input_array[i + 1]) / reminder1;
+            }
+            else {
+                input_array[i+1] = (input_array[i] * input_array[i + 1]) / reminder2;
+            }
+        }
+    }
+    return input_array[size - 1];
+}
+
+console.log(lcm_more_than_two_numbers([100,90,80,7])); 
+console.log(lcm_more_than_two_numbers([5,10,15,25]));
