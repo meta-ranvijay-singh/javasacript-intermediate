@@ -1,6 +1,6 @@
 // program to display fibonacci sequence using recursion
 
-function fibonacci(num) {
+const fibonacci = (num) => {
     if(num < 2) {
         return num;
     }
