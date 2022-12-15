@@ -1,4 +1,4 @@
-function lcm_more_than_two_numbers(input_array) {
+const lcm_more_than_two_numbers = (input_array) => {
     let reminder1 = 0, reminder2 = 0;
     let size = input_array.length;
     for(let i=0;i<size;i++) {
